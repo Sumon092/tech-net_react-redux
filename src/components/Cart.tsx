@@ -12,12 +12,11 @@ import {
   HiOutlineTrash,
 } from 'react-icons/hi';
 import { Button } from './ui/button';
-import { IProduct } from '@/types/globalTypes';
+import {useAppSelector } from '@/redux/hooks';
 
 export default function Cart() {
+  const {products}=useAppSelector(state=>state.cart)
   //! Dummy data
-
-  const products: IProduct[] = [];
   const total = 0;
 
   //! **
@@ -44,9 +43,9 @@ export default function Cart() {
                 <img src={product?.image} alt="" className="h-full" />
               </div>
               <div className="px-2 w-full flex flex-col gap-3">
-                <h1 className="text-2xl self-center">{product?.name}</h1>
+                <h1 className="text-lg self-center">{product?.name}</h1>
                 <p>Quantity: {product.quantity}</p>
-                <p className="text-xl">
+                <p className="text-lg">
                   Total Price: {(product.price * product.quantity!).toFixed(2)}{' '}
                   $
                 </p>
