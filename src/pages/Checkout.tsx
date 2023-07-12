@@ -5,8 +5,8 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Switch } from '@/components/ui/switch';
 import { Textarea } from '@/components/ui/textarea';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { IProduct } from '@/types/globalTypes';
+import {useAppSelector } from '@/redux/hooks';
+
 
 import { useState } from 'react';
 
