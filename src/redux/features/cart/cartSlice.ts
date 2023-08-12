@@ -6,10 +6,12 @@ interface ICart {
   products: IProduct[];
   total: number;
 }
+
 const initialState: ICart = {
   products: [],
   total: 0,
 };
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
