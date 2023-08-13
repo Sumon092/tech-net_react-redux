@@ -15,7 +15,10 @@ export default function ProductReview({ id }: IProps) {
   const [inputValue, setInputValue] = useState<string>('');
   console.log(id, 'review page');
 
-  const { data } = useGetCommentQuery(id);
+  const { data } = useGetCommentQuery(id, {
+    refetchOnMountOrArgChange: true,
+    pollingInterval: 1000,
+  });
   console.log(data?.comments, 'comment data');
   const [postComment] = usePostCommentMutation();
 
