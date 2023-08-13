@@ -7,7 +7,7 @@ const dummyComments = [
   'Bhalo na',
   'Ki shob ghori egula??',
   'Eta kono product holo ??',
-  '200 taka dibo, hobe ??',
+  '200 taka dibo, hobe ??', 
 ];
 
 export default function ProductReview() {
