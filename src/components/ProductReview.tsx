@@ -1,23 +1,23 @@
-
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { FiSend } from 'react-icons/fi';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { useGetCommentQuery, usePostCommentMutation } from '@/redux/features/product/productApi';
+import {
+  useGetCommentQuery,
+  usePostCommentMutation,
+} from '@/redux/features/product/productApi';
 
 interface IProps {
   id: string;
 }
 export default function ProductReview({ id }: IProps) {
   const [inputValue, setInputValue] = useState<string>('');
-  console.log(id, 'review page');
 
   const { data } = useGetCommentQuery(id, {
     refetchOnMountOrArgChange: true,
     pollingInterval: 1000,
   });
-  console.log(data?.comments, 'comment data');
   const [postComment] = usePostCommentMutation();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -38,7 +38,7 @@ export default function ProductReview({ id }: IProps) {
     <div className="max-w-7xl mx-auto mt-5 p-24">
       <form className="flex gap-5 items-center" onSubmit={handleSubmit}>
         <Textarea
-          className="min-h-[30px]"
+          className="min-h-[20px]"
           onChange={handleChange}
           value={inputValue}
         />
